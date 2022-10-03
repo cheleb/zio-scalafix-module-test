@@ -1,7 +1,7 @@
-val scala3Version = "2.13.9"
+val scala3Version = "3.2.0"
 
 ThisBuild / scalafixDependencies +=
-  "dev.cheleb" %% "zio-module-pattern" % "0.0.1"
+  "dev.cheleb" %% "zio-module-pattern" % "0.0.2"
 
 lazy val root = project
   .in(file("."))

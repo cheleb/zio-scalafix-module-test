@@ -17,5 +17,8 @@ object TestZIOServiceWithCompanion {
   val zozo = "bo"
   def nenai = "belle"
   def testIO(i: Int): ZIO[TestZIOServiceWithCompanion, Throwable, Int] = ZIO.serviceWithZIO[TestZIOServiceWithCompanion](_.testIO(i))
+  def testTask(i: Int): RIO[TestZIOServiceWithCompanion, Int] = ZIO.serviceWithZIO[TestZIOServiceWithCompanion](_.testTask(i))
+  def test2(i: Int): ZIO[TestZIOServiceWithCompanion, Throwable, Int] = ZIO.serviceWithZIO[TestZIOServiceWithCompanion](_.test2(i))
+  def test3(i: Int): ZIO[TestZIOServiceWithCompanion, Throwable, Int] = ZIO.serviceWithZIO[TestZIOServiceWithCompanion](_.test3(i))
 }
 
