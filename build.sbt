@@ -1,7 +1,8 @@
-val scala3Version = "3.2.0"
+val mainScalaVersion = "2.13.10"
+//val mainScalaVersion = "3.2.1"
 
 ThisBuild / scalafixDependencies +=
-  "dev.cheleb" %% "zio-module-pattern" % "0.0.2"
+  "dev.cheleb" %% "zio-module-pattern" % "0.0.4"
 
 lazy val root = project
   .in(file("."))
@@ -9,9 +10,11 @@ lazy val root = project
     name := "zio-scalafix-module-test",
     version := "0.1.0-SNAPSHOT",
    
-    scalaVersion := scala3Version,
+    scalaVersion := mainScalaVersion,
     semanticdbEnabled := true, // enable SemanticDB
     semanticdbVersion := scalafixSemanticdb.revision,
     scalafixOnCompile := true,
-    libraryDependencies += "dev.zio" %% "zio-streams" % "2.0.2"
+    scalafmtAll := true,
+    scalafmtOnCompile := true,
+    libraryDependencies += "dev.zio" %% "zio-streams" % "2.0.3"
   )
